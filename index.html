@@ -5,9 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Canvas Game</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 <body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      /* overflow: hidden; */
+    }
+  </style>
+  <div class="fixed text-white select-none"><span>Score: </span><span id="scoreEl">0</span></div>
+  <div class="fixed inset-0 flex items-center justify-center text-center" id="startGameBanner">
+    <div class="bg-white max-w-md w-full p-6">
+      <h1 class="text-4xl">0</h1>
+      <p class="text-sm text-gray-700">Points</p>
+      <div>
+        <button class="bg-blue-500 text-white rounded-full w-full" id="startGameEl">Start Game</button>
+      </div>
+    </div>
+  </div>
   <canvas></canvas>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./index.js"></script>
 </body>

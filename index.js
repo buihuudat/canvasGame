@@ -3,6 +3,10 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+const scoreEl = document.querySelector('#scoreEl');
+const startGameBanner = document.querySelector('#startGameBanner');
+const startGameBtn = document.querySelector('#startGameEl');
+
 class Player {
   constructor(x, y, radius, color) {
     this.x = x;
@@ -88,6 +92,8 @@ class Particle {
 
   update() {
     this.draw();
+    this.velocity.x *= friction;
+    this.velocity.y *= friction;
     this.x += this.velocity.x;
     this.y += this.velocity.y;
     this.alpha -= 0.01;
@@ -128,6 +134,7 @@ function spanEnemies() {
 }
 
 let animationId;
+let score = 0;
 
 function animate() {
   animationId = requestAnimationFrame(animate);
@@ -165,6 +172,9 @@ function animate() {
     projectiles.forEach((projectile) => {
       const dist = Math.hypot(projectile.x - enemy.x, projectile.y - enemy.y);
       if (dist - enemy.radius - projectile.radius < 1) {
+        // increase score
+        score += 100;
+        scoreEl.innerHTML = score;
         for (let i = 0; i < enemy.radius * 2; i++) {
           projectiles.push(new Particle(projectile.x, projectile.y, Math.random() * 2, enemy.color, {
             x: (Math.random() * 2 - 1) * Math.random() * 6,
@@ -181,6 +191,7 @@ function animate() {
             projectiles.splice(projectiles.indexOf(projectile), 1);
           }, 0);
         } else {
+          score += 250;
           enemies.splice(index, 1);
           projectiles.splice(projectiles.indexOf(projectile), 1);
         }
@@ -198,5 +209,8 @@ window.addEventListener('click', (e) => {
   projectiles.push(new Projectile(canvas.width / 2, canvas.height / 2, 5, 'white', velocity));
 })
 
-animate()
-spanEnemies()
+startGameBtn.onclick = () => {
+  startGameBanner.style.display = 'none';
+  spanEnemies();
+  animate();
+}
