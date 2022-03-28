@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Canvas Game</title>
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="loading.css">
 
 </head>
 <body>
@@ -15,12 +16,199 @@
       padding: 0;
       font-family: 'Inter', sans-serif;
       /* overflow: hidden; */
+      background-image: url('https://media0.giphy.com/media/7th7UEeADehvW/giphy.gif');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .bg {
+      backdrop-filter: blur(20px);
+      padding: 3rem;
+      border-radius: 10px;
     }
   </style>
+
+  <span class="loader load">
+    <div class="cont">
+        <div class="h1Container">
+            <div class="cube h1c w1 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h1c w1 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h1c w1 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h1c w2 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h1c w2 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h1c w2 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h1c w3 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h1c w3 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h1c w3 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+        </div>
+
+        <div class="h2Container">
+
+            <div class="cube h2c w1 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h2c w1 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h2c w1 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h2c w2 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h2c w2 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h2c w2 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h2c w3 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h2c w3 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h2c w3 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+        </div>
+
+        <div class="h3Container">
+
+            <div class="cube h3c w1 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h3c w1 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h3c w1 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h3c w2 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h3c w2 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h3c w2 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h3c w3 l1">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h3c w3 l2">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+
+            <div class="cube h3c w3 l3">
+                <div class="face top"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+            </div>
+        </div>
+
+    </div>
+  </span>
+
   <div class="fixed text-white select-none"><span>Score: </span><span id="scoreEl">0</span></div>
   <div class="fixed inset-0 flex items-center justify-center text-center" id="startGameBanner">
-    <div class="bg-white max-w-md w-full p-6">
-      <h1 class="text-4xl">0</h1>
+    <div class="bg max-w-md w-full p-6">
+      <!-- <h4 class="text-white">Your point</h4> -->
+      <h1 class="text-4xl text-white">0</h1>
       <p class="text-sm text-gray-700">Points</p>
       <div>
         <button class="bg-blue-500 text-white rounded-full w-full" id="startGameEl">Start Game</button>

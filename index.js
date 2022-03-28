@@ -1,3 +1,9 @@
+window.addEventListener("load", function () {
+  const load = document.querySelector('.loader');
+  load.style.display = 'none'
+})
+
+
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -6,6 +12,7 @@ canvas.height = window.innerHeight;
 const scoreEl = document.querySelector('#scoreEl');
 const startGameBanner = document.querySelector('#startGameBanner');
 const startGameBtn = document.querySelector('#startGameEl');
+
 
 class Player {
   constructor(x, y, radius, color) {
